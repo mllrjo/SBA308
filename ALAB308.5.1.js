@@ -125,13 +125,19 @@ redArray.age
 // e. average
 redArray.age/array.length
 
-// Part 3.
+// Part 3. I asked chatGPT for help on this one. Must be a better way.
 function incrAge(object) {
+	if(typeof object.age !== 'number') {
+		object.age = 0;
+	}
 	object.age = object.age + 1;
+	object.updated_at = new Date();
 	return object
 }
 let objectOne = {
-	age: 32,
-	updated_at: new Date()
+	age: 0, 
+	updated_at: Date()
 }
+let objectUpdated =incrAge(objectOne);
+
 
